@@ -16,9 +16,9 @@ relu:
     # Prologue
     mv t0 a1
     mv t2 a0
-    bgt t0, x0, loop_start
-    li a0 36
-    j exit
+    addi t3, x0, 1
+    blt t0, t3, error
+    j loop_start
 
 loop_start:
     # check the values // t2 has the array from a0
@@ -39,3 +39,7 @@ loop_continue:
 loop_end:
     # Epilogue
     jr ra
+
+error:
+    li a0 36
+    j exit
