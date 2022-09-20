@@ -22,10 +22,10 @@ relu:
 
 loop_start:
     # check the values // t2 has the array from a0
-    ble t0, x0, loop_end
+    beq t0, x0, loop_end
     lw t2 0(a0)
     # if value is not negative -> skip
-    blt x0, t2, loop_continue
+    bge t2, x0, loop_continue
     # else set to zero
     sw zero 0(a0)
     # loop continue
