@@ -14,25 +14,28 @@
 # ==============================================================================
 relu:
     # Prologue
-
+    mv t0 a1
+    mv t2 a0
+    bgt t0, x0, loop_start
+    li a0 36
+    j exit
 
 loop_start:
-
-
-
-
-
-
-
-
+    # check the values // t2 has the array from a0
+    blt t0, x0, loop_end
+    lw t2 0(a0)
+    # if value is not negative -> skip
+    bgt t2, x0, loop_continue
+    # else set to zero
+    sw zero 0(a0)
+    # loop continue
+    j loop_continue
+    
 loop_continue:
-
-
-
+    addi t0, t0, -1
+    addi a0, a0, 4
+    j loop_start
+    
 loop_end:
-
-
     # Epilogue
-
-
     jr ra
