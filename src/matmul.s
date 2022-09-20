@@ -80,7 +80,7 @@ inner_loop_start:
     
     jal ra dot
     
-    sw a0 0(s6)
+    sw a0, 0(s6)
     addi s6, s6, 4 # add 4 to move d over 1 int
     addi s8, s8, 1 # increment ctr
     j inner_loop_start

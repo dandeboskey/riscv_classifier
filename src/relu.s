@@ -25,7 +25,7 @@ loop_start:
     blt t0, x0, loop_end
     lw t2 0(a0)
     # if value is not negative -> skip
-    bgt t2, x0, loop_continue
+    blt x0, t2, loop_continue
     # else set to zero
     sw zero 0(a0)
     # loop continue
