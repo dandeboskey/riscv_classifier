@@ -131,6 +131,12 @@ classify:
     jal print_char
     
     # free data
+    mv a0 s0
+    jal ra free
+    mv a0 s1
+    jal ra free
+    mv a0 s2
+    jal ra free
     mv a0 s3
     jal ra free
     mv a0 s4
