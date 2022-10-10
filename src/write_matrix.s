@@ -57,7 +57,6 @@ write_matrix:
     ebreak
     # call fwrite to write actual data
     mv a0 s0
-    jal ra free
     mv a1 s1
     mul a2 s2 s3
     li a3 4
