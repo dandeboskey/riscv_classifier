@@ -132,15 +132,15 @@ classify:
     
     # free data
     mv a0 s3
-    jal free
+    jal ra free
     mv a0 s4
-    jal free
+    jal ra free
     mv a0 s5
-    jal free
+    jal ra free
     mv a0 s6
-    jal free
+    jal ra free
     mv a0 s7
-    jal free
+    jal ra free
     sw x0 40(sp)
     sw x0 44(sp)
     sw x0 48(sp)
