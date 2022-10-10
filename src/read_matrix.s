@@ -77,7 +77,6 @@ read_matrix:
     jal malloc
     beq a0 x0 error_malloc
     mv s3 a0 #s3 contains pointer to array buffer
-    jal ra free
     lw t0 0(s1)
     lw t1 0(s2)
        
@@ -101,6 +100,7 @@ read_matrix:
     beq t1 a0 error_fclose
 
     mv a0 s3
+    jal ra free
     
     # Epilogue
     lw s0, 0(sp)
