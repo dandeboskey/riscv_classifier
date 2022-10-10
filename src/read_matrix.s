@@ -100,7 +100,7 @@ read_matrix:
     beq t1 a0 error_fclose
 
     mv a0 s3
-    jal ra free
+    jal a0 free
     
     # Epilogue
     lw s0, 0(sp)
