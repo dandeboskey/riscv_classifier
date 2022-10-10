@@ -56,6 +56,7 @@ read_matrix:
     # call fread
     mv a1 a0 #a1 now contains array from prev malloc
     mv a0 s0 #s0 contains array descriptor
+    jal ra free
     addi a2 x0 8
     addi sp, sp, -4
     sw a1 0(sp)
@@ -100,7 +101,6 @@ read_matrix:
     beq t1 a0 error_fclose
 
     mv a0 s3
-    jal a0 free
     
     # Epilogue
     lw s0, 0(sp)
